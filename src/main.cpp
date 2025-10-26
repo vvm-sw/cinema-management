@@ -1,10 +1,10 @@
 
 #include <iostream>
-#include "./Model/cinema.h"
-#include "./Model/Sala.h"
-
+#include "../include/Cinema.h"
+#include "../include/Sala.h"
+using namespace std;
 int main () {
-    cinema c = cinema();
+    Cinema c = Cinema();
     Sala s = Sala();
     s.setNome("2D");
     //c = new cinema();

@@ -1,5 +1,6 @@
-#include "Sala.h"
+#include "../include/Sala.h"
 
+using namespace std;
 //Sala::Sala(const int id, const string& nome, const int capacidade, vector<vector<bool>> assentos, const TipoSala tipoSala) :
 //id(id), nome(nome), capacidade(capacidade), assentos(assentos), tipoSala(tipoSala)
 Sala::Sala(const int id, const string& nome, const int capacidade, vector<vector<bool>> assentos, const TipoSala tipoSala) {
@@ -14,13 +15,16 @@ Sala::Sala() {
     nome = "";
     capacidade = 0;
     assentos = vector<vector<bool>>();
-    tipoSala = TipoSala::twoD;
+    tipoSala = TipoSala::_2D;
 }
 Sala::~Sala() {}
 const int Sala::getId() {
  return id;
 }
-const string& Sala::getNome() {
+const Sala::TipoSala Sala::getTipoSala() {
+ return tipoSala;
+}
+const string Sala::getNome() {
 return nome;
 }
 const int Sala::getCapacidade() {
@@ -32,12 +36,15 @@ return assentos;
 void Sala::setId(int id) {
 this->id = id;
 }
-void Sala::setNome(const string nome) {
+void Sala::setTipoSala(TipoSala tipo) {
+this->id = id;
+}
+void Sala::setNome(const string& nome) {
 this->nome = nome;
 }
 void Sala::setCapacidade(int capacidade) {
 this->capacidade = capacidade;
 }
-void Sala::setAssentos(vector<vector<bool>> assentos) {
+void Sala::setAssentos(vector<vector<bool>>& assentos) {
 this->assentos = assentos;
 }
