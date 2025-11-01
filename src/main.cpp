@@ -2,6 +2,9 @@
 #include <iostream>
 #include "../include/Cinema.h"
 #include "../include/Sala.h"
+#include "../include/RepositorioFilmes.h"
+#include "../include/FilmeCLI.h"
+
 using namespace std;
 int main () {
     Cinema c = Cinema();
@@ -14,5 +17,9 @@ int main () {
     c.setAbertura(abertura);
     cout << c.getAbertura().tm_hour << endl;
     cout << s.getNome() << endl;
+
+    RepositorioFilmes repo("filmes.csv");
+    runFilmeMenu(repo); // <-- use a função diretamente
+
     return 0;
 }

@@ -8,4 +8,10 @@ include_directories("include")
 add_executable(cinema_management
         src/Model/Cinema.cpp
         src/Model/Sala.cpp
-        src/main.cpp)
+        src/main.cpp
+        include/Filme.h
+        src/Model/Filme.cpp
+        include/RepositorioFilmes.h
+        src/Model/RepositorioFilmes.cpp
+        include/FilmeCLI.h
+        src/Model/FilmeCLI.cpp)
