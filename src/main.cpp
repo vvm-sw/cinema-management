@@ -2,6 +2,8 @@
 #include <iostream>
 #include "../include/Cinema.h"
 #include "../include/Sala.h"
+#include "../include/RepositorioFilmes.h"
+#include "../include/FilmeCLI.h"
 #include "../include/Administrador.h"
 #include "../include/Atendente.h"
 
@@ -17,6 +19,9 @@ int main () {
     c.setAbertura(abertura);
     cout << c.getAbertura().tm_hour << endl;
     cout << s.getNome() << endl;
+
+    RepositorioFilmes repo("filmes.csv");
+    runFilmeMenu(repo); // <-- use a função diretamente
 
     // teste da classe Administrador
     Administrador admin(1, "Pedro", 5000.0);
