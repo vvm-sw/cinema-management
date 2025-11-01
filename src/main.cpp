@@ -3,6 +3,7 @@
 #include "../include/Cinema.h"
 #include "../include/Sala.h"
 #include "../include/Administrador.h"
+#include "../include/Atendente.h"
 
 using namespace std;
 int main () {
@@ -18,7 +19,7 @@ int main () {
     cout << s.getNome() << endl;
 
     // teste da classe Administrador
-    Administrador admin(1, "Maria", 5000.0);
+    Administrador admin(1, "Pedro", 5000.0);
 
     admin.exibirInfo();
     admin.executarTarefa();
@@ -27,5 +28,13 @@ int main () {
     admin.cadastrarSala();
     admin.cadastrarSessao();
 
+    // teste da classe Atendente
+    Atendente aten(2, "João", 2500.0);
+
+    aten.exibirInfo();
+    aten.executarTarefa();
+
+    aten.venderIngresso();
+    aten.cancelarVenda();
     return 0;
 }
