@@ -8,4 +8,7 @@ include_directories("include")
 add_executable(cinema_management
         src/Model/Cinema.cpp
         src/Model/Sala.cpp
-        src/main.cpp)
+        src/main.cpp
+        src/Model/Funcionario.cpp
+        src/Model/Administrador.cpp
+        src/Model/Atendente.cpp)
