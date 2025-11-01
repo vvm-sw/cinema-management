@@ -9,9 +9,10 @@ add_executable(cinema_management
         src/Model/Cinema.cpp
         src/Model/Sala.cpp
         src/main.cpp
-        include/Filme.h
+        feature/filmes
         src/Model/Filme.cpp
-        include/RepositorioFilmes.h
         src/Model/RepositorioFilmes.cpp
-        include/FilmeCLI.h
         src/Model/FilmeCLI.cpp)
+        src/Model/Funcionario.cpp
+        src/Model/Administrador.cpp
+        src/Model/Atendente.cpp)
