@@ -3,11 +3,9 @@ project(cinema_management)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(src/Model)
+include_directories("include")
 
 add_executable(cinema_management
-        src/Model/cinema.cpp
-        src/Model/cinema.h
+        src/Model/Cinema.cpp
         src/Model/Sala.cpp
-        src/Model/Sala.h
         src/main.cpp)
