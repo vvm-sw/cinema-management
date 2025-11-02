@@ -24,7 +24,7 @@ public:
     std::string getHorario() const;
 
     // modificação
-    void setId(std::string& id_);
+    void setId(const std::string& id_);
     void setFilme(const Filme& filme);
     void setSala(const Sala& sala);
     void setHorario(const std::string& horario);
