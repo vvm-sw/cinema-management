@@ -1,12 +1,12 @@
-#include "../../include/Sessao.h"
+#include "../include/Sessao.h"
 #include <iostream>
 #include <sstream>
 #include <map>
 
-Sessao::Sessao(const std::string& id, const Filme& filme, const Sala& sala, const std::string& horario)
+Sessao::Sessao(int id, const Filme& filme, const Sala& sala, const std::string& horario)
     : id(id), filme(filme), sala(sala), horario(horario) {}
 
-std::string Sessao::getId() const {
+int Sessao::getId() const {
     return id;
 }
 
@@ -22,7 +22,7 @@ std::string Sessao::getHorario() const {
     return horario;
 }
 
-void Sessao::setId(const std::string& id_) {
+void Sessao::setId(int id_) {
 this->id = id_;
 }
 
