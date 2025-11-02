@@ -8,23 +8,23 @@
 
 class Sessao {
 private:
-    std::string id;
+    int id;
     Filme filme;
     Sala sala;
     std::string horario; // no formato "HH:MM"
 
 public:
     Sessao() = default;
-    Sessao(std::string& id, const Filme& filme, const Sala& sala, const std::string& horario);
+    Sessao(int id, const Filme& filme, const Sala& sala, const std::string& horario);
 
     // acesso
-    std::string getId() const;
+    int getId() const;
     Filme getFilme() const;
     Sala getSala() const;
     std::string getHorario() const;
 
     // modificação
-    void setId(const std::string& id_);
+    void setId(int id_);
     void setFilme(const Filme& filme);
     void setSala(const Sala& sala);
     void setHorario(const std::string& horario);
