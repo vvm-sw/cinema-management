@@ -5,6 +5,12 @@
 #include <iostream>
 
 class Funcionario {
+protected:
+    int id;
+    std::string nome;
+    std::string cargo;
+    double salario;
+
 public:
     // Construtor e destrutor
     Funcionario(int id, const std::string& nome, const std::string& cargo, double salario);
@@ -23,13 +29,7 @@ public:
     // Métodos
     virtual void exibirInfo() const;
     virtual void executarTarefa() const = 0;
-    // o const = 0 meio que diz que essa classe não implementa esse método mas as classes que herdam são obrigadas a implementar sua própria versão
 
-protected:
-    int id;
-    std::string nome;
-    std::string cargo;
-    double salario;
 };
 
 

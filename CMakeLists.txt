@@ -12,7 +12,8 @@ add_executable(cinema_management
         feature/filmes
         src/Model/Filme.cpp
         src/Model/RepositorioFilmes.cpp
-        src/Model/FilmeCLI.cpp)
+        src/Model/FilmeCLI.cpp
         src/Model/Funcionario.cpp
         src/Model/Administrador.cpp
-        src/Model/Atendente.cpp)
+        src/Model/Atendente.cpp
+)
