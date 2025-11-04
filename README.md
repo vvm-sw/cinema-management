@@ -49,11 +49,11 @@ O sistema é composto pelas seguintes classes:
 Legenda: Tela inicial do programa
 
 ![11](https://github.com/user-attachments/assets/c3d47e9d-7f8e-4a40-8c78-f0446d679613)
+![12](https://github.com/user-attachments/assets/5fe6cc77-f8f0-4e07-b7bc-cb8c6ea752c3)
 
 Legenda: Menu do administrador após fazer login
 
 ![3](https://github.com/user-attachments/assets/bace9c08-f4d5-42d6-b4fd-1806a8e6d90c)
-![12](https://github.com/user-attachments/assets/5fe6cc77-f8f0-4e07-b7bc-cb8c6ea752c3)
 
 Legenda: Menu do atendente após fazer login
 
