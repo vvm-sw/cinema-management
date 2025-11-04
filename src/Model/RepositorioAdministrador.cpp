@@ -6,10 +6,53 @@
 
 // Construtor
 RepositorioAdministrador::RepositorioAdministrador(const std::string& caminho)
-    : caminhoArquivo(caminho) {}
+    : caminhoArquivo(caminho), ultimoId(0) {
+    carregar();
+}
 
-// Função auxiliar para salvar toda a lista
-void RepositorioAdministrador::salvarTodos(const std::vector<Administrador>& administradores) const {
+// Carrega todos os administradores para descobrir o maior ID
+void RepositorioAdministrador::carregar() {
+    administradores.clear();
+    std::ifstream arquivo(caminhoArquivo);
+
+    if (!arquivo.is_open()) {
+        std::cerr << "Aviso: não foi possível abrir o arquivo "
+                  << caminhoArquivo << ". Será criado automaticamente."
+                  << std::endl;
+        ultimoId = 0;
+        return;
+    }
+
+    std::string linha;
+    while (std::getline(arquivo, linha)) {
+        std::stringstream ss(linha);
+        std::string idStr, nome, cargo, salarioStr, usuario, senha;
+
+        std::getline(ss, idStr, ',');
+        std::getline(ss, nome, ',');
+        std::getline(ss, cargo, ',');
+        std::getline(ss, salarioStr, ',');
+        std::getline(ss, usuario, ',');
+        std::getline(ss, senha, ',');
+
+        if (idStr.empty()) continue;
+
+        int id = std::stoi(idStr);
+        double salario = std::stod(salarioStr);
+
+        administradores.emplace_back(id, nome, salario, usuario, senha);
+
+        // ✅ Atualiza o maior ID encontrado
+        if (id > ultimoId) {
+            ultimoId = id;
+        }
+    }
+
+    arquivo.close();
+}
+
+// Salva o vetor no .csv
+void RepositorioAdministrador::salvar() const {
     std::ofstream arquivo(caminhoArquivo, std::ios::trunc);
 
     if (!arquivo.is_open()) {
@@ -21,113 +64,91 @@ void RepositorioAdministrador::salvarTodos(const std::vector<Administrador>& adm
         arquivo << adm.getId() << ","
                 << adm.getNome() << ","
                 << adm.getCargo() << ","
-                << adm.getSalario() << "\n";
+                << adm.getSalario() << ","
+                << adm.getUsuario() << ","
+                << adm.getSenha() << "\n";
     }
 
     arquivo.close();
 }
 
-// Create
-void RepositorioAdministrador::adicionarAdministrador(const Administrador& administrador) {
-    std::ofstream arquivo(caminhoArquivo, std::ios::app);
-
-    if (!arquivo.is_open()) {
-        std::cerr << "Erro ao abrir o arquivo: " << caminhoArquivo << std::endl;
-        return;
-    }
-
-    arquivo << administrador.getId() << ","
-            << administrador.getNome() << ","
-            << administrador.getCargo() << ","
-            << administrador.getSalario() << "\n";
-
-    arquivo.close();
+// 🔹 Gera o próximo ID automaticamente
+int RepositorioAdministrador::gerarNovoId() {
+    return ++ultimoId;
 }
 
-// Read
-std::vector<Administrador> RepositorioAdministrador::carregarAdministradores() const {
-    std::vector<Administrador> administradores;
-    std::ifstream arquivo(caminhoArquivo);
+// Adicionar
+Administrador& RepositorioAdministrador::adicionarAdministrador(const std::string& nome, double salario) {
+    int novoId = gerarNovoId();
+    Administrador novo(novoId, nome, salario);
 
-    if (!arquivo.is_open()) {
-        std::cerr << "Erro ao abrir o arquivo: " << caminhoArquivo << std::endl;
-        return administradores;
-    }
+    administradores.push_back(novo);
+    salvar();
 
-    std::string linha;
-    while (std::getline(arquivo, linha)) {
-        std::stringstream ss(linha);
-        std::string idStr, nome, cargo, salarioStr;
+    std::cout << "✅ Administrador adicionado com ID " << novoId << std::endl;
+    return administradores.back();
+}
 
-        std::getline(ss, idStr, ',');
-        std::getline(ss, nome, ',');
-        std::getline(ss, cargo, ',');
-        std::getline(ss, salarioStr, ',');
-
-        if (idStr.empty()) continue;
-
-        int id = std::stoi(idStr);
-        double salario = std::stod(salarioStr);
-
-        administradores.emplace_back(id, nome, salario);
-    }
-
-    arquivo.close();
+// Listar
+std::vector<Administrador> RepositorioAdministrador::listarAdministradores() const {
     return administradores;
 }
 
-// Read (por ID)
-Administrador* RepositorioAdministrador::buscarPorId(int id) const {
-    std::vector<Administrador> administradores = carregarAdministradores();
+// Buscar por id
+Administrador* RepositorioAdministrador::buscarPorId(int id) {
     for (auto& adm : administradores) {
-        if (adm.getId() == id) {
-            return new Administrador(adm); // retorna cópia dinâmica
-        }
+        if (adm.getId() == id) return &adm;
     }
-    return nullptr; // não encontrado
+    return nullptr;
 }
 
-// Update
+// Atualizar
 bool RepositorioAdministrador::atualizarAdministrador(int id, const Administrador& novoAdministrador) {
-    std::vector<Administrador> administradores = carregarAdministradores();
-    bool encontrado = false;
-
     for (auto& adm : administradores) {
         if (adm.getId() == id) {
             adm = novoAdministrador;
-            encontrado = true;
-            break;
+            salvar();
+            std::cout << "Administrador atualizado com sucesso!" << std::endl;
+            return true;
         }
     }
-
-    if (encontrado) {
-        salvarTodos(administradores);
-    }
-
-    return encontrado;
-}
-
-// Delete
-bool RepositorioAdministrador::removerAdministrador(int id) {
-    std::vector<Administrador> administradores = carregarAdministradores();
-    size_t tamanhoOriginal = administradores.size();
-
-    administradores.erase(
-        std::remove_if(administradores.begin(), administradores.end(),
-                       [id](const Administrador& adm) { return adm.getId() == id; }),
-        administradores.end()
-    );
-
-    if (administradores.size() < tamanhoOriginal) {
-        salvarTodos(administradores);
-        return true;
-    }
-
+    std::cerr << "Erro: administrador com ID " << id << " não encontrado." << std::endl;
     return false;
 }
 
-// Limpar
-void RepositorioAdministrador::limparArquivo() const {
+// Deletar por id
+bool RepositorioAdministrador::removerAdministrador(int id) {
+    auto it = std::remove_if(administradores.begin(), administradores.end(),
+                             [id](const Administrador& adm) { return adm.getId() == id; });
+
+    if (it != administradores.end()) {
+        administradores.erase(it, administradores.end());
+        salvar();
+        std::cout << "Administrador removido com sucesso!" << std::endl;
+        return true;
+    }
+
+    std::cerr << "Erro: administrador com ID " << id << " não encontrado." << std::endl;
+    return false;
+}
+
+// Limpa o arquivo .csv
+void RepositorioAdministrador::limparArquivo() {
+    administradores.clear();
+    ultimoId = 0;
     std::ofstream arquivo(caminhoArquivo, std::ios::trunc);
     arquivo.close();
+    std::cout << "Arquivo de administradores limpo!" << std::endl;
+}
+
+// Responsável por autenticar o login
+Administrador* RepositorioAdministrador::autenticar(const std::string& usuario, const std::string& senha) {
+    for (auto& adm : administradores) {
+        if (adm.getUsuario() == usuario && adm.getSenha() == senha) {
+            // Retorna um novo objeto dinâmico para ser usado no login
+            return new Administrador(adm);
+        }
+    }
+
+    return nullptr; // login inválido
 }

@@ -10,92 +10,158 @@
 #include "../include/RepositorioAdministrador.h"
 
 using namespace std;
+
+// Função auxiliar para limpar a tela
+void limparTela() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+void pausar() {
+    std::cout << "\nPressione ENTER para continuar...";
+    std::cin.ignore();
+    std::cin.get();
+}
+
+void menuAdministrador() {
+    int opcao = -1;
+
+    while (opcao != 0) {
+        limparTela();
+
+        std::cout << "=============================\n";
+        std::cout << "     MENU ADMINISTRADOR\n";
+        std::cout << "=============================\n";
+        std::cout << "1 - Cadastrar Filme\n";
+        std::cout << "2 - Cadastrar Sala\n";
+        std::cout << "3 - Cadastrar Sessão\n";
+        std::cout << "0 - Voltar\n";
+        std::cout << "-----------------------------\n";
+        std::cout << "Escolha: ";
+        std::cin >> opcao;
+
+        limparTela();
+
+        switch (opcao) {
+            case 1:
+                std::cout << "📽Função 'Cadastrar Filme' ainda não implementada.\n";
+                break;
+            case 2:
+                std::cout << "Função 'Cadastrar Sala' ainda não implementada.\n";
+                break;
+            case 3:
+                std::cout << "Função 'Cadastrar Sessão' ainda não implementada.\n";
+                break;
+            case 0:
+                std::cout << "Voltando ao menu principal...\n";
+                break;
+            default:
+                std::cout << "Opção inválida!\n";
+        }
+
+        if (opcao != 0) {
+            std::cout << "\nPressione ENTER para continuar...";
+            std::cin.ignore();
+            std::cin.get();
+        }
+    }
+}
+
+void menuAtendente() {
+    int opcao = -1;
+
+    while (opcao != 0) {
+        limparTela();
+
+        std::cout << "=============================\n";
+        std::cout << "     💼 MENU ATENDENTE\n";
+        std::cout << "=============================\n";
+        std::cout << "1 - Vender Ingresso\n";
+        std::cout << "2 - Cancelar Venda\n";
+        std::cout << "0 - Voltar\n";
+        std::cout << "-----------------------------\n";
+        std::cout << "Escolha: ";
+        std::cin >> opcao;
+
+        limparTela();
+
+        switch (opcao) {
+            case 1:
+                std::cout << "Função 'Vender Ingresso' ainda não implementada.\n";
+                break;
+            case 2:
+                std::cout << "Função 'Cancelar Venda' ainda não implementada.\n";
+                break;
+            case 0:
+                std::cout << "Voltando ao menu principal...\n";
+                break;
+            default:
+                std::cout << "Opção inválida!\n";
+        }
+
+        if (opcao != 0) {
+            std::cout << "\nPressione ENTER para continuar...";
+            std::cin.ignore();
+            std::cin.get();
+        }
+    }
+}
+
 int main () {
-    Cinema c = Cinema();
-    Sala s = Sala();
-    s.setNome("2D");
-    //c = new cinema();
-    c.setNome("UCI");
-    c.setEndereco("Av. República do Líbano - Recife/PE");
-    struct tm abertura {.tm_hour = 10};
-    c.setAbertura(abertura);
-    cout << c.getAbertura().tm_hour << endl;
-    cout << s.getNome() << endl;
-
-    //RepositorioFilmes repo("filmes.csv");
-    //runFilmeMenu(repo); // <-- use a função diretamente
-
-    // teste da classe Administrador
-    Administrador admin(1, "Pedro", 5000.0);
-
-    admin.exibirInfo();
-    admin.executarTarefa();
-
-    admin.cadastrarFilme();
-    admin.cadastrarSala();
-    admin.cadastrarSessao();
-
-    // teste da classe Atendente
-    Atendente aten(2, "João", 2500.0);
-
-    aten.exibirInfo();
-    aten.executarTarefa();
-
-    aten.venderIngresso();
-    aten.cancelarVenda();
-
-    // teste do repositorio da classe Atendente
-    RepositorioAtendente repo("../data/atendentes.csv");
-
-    // criando
-    repo.limparArquivo();
-    repo.adicionarAtendente(Atendente(1, "João Silva", 2500.0));
-    repo.adicionarAtendente(Atendente(2, "Maria Souza", 2700.0));
-
-    // listando
-    auto lista = repo.carregarAtendentes();
-    std::cout << "Lista inicial:\n";
-    for (const auto& a : lista)
-        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
-
-    // atualizar
-    if (repo.atualizarAtendente(2, Atendente(2, "Maria Souza", 3000.0)))
-        std::cout << "\nAtendente atualizado com sucesso!\n";
-
-    // deletar
-    if (repo.removerAtendente(1))
-        std::cout << "\nAtendente removido com sucesso!\n";
-
-    // listar
-    std::cout << "\nLista após alterações:\n";
-    for (const auto& a : repo.carregarAtendentes())
-        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
-
-    // teste do repositório do administrador
     RepositorioAdministrador repoAdm("../data/administradores.csv");
+    RepositorioAtendente repoAt("../data/atendentes.csv");
 
-    // 1️⃣ criando
-    repoAdm.limparArquivo();
-    repoAdm.adicionarAdministrador(Administrador(1, "Carlos Lima", 5000.0));
-    repoAdm.adicionarAdministrador(Administrador(2, "Fernanda Alves", 5500.0));
+    int opcao = -1;
+    std::string usuario, senha;
 
-    // lendo
-    std::cout << "Lista de administradores:\n";
-    for (const auto& a : repoAdm.carregarAdministradores())
-        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
+    while (opcao != 0) {
+        limparTela();
+        std::cout << "===========================\n";
+        std::cout << "   CINEMA MANAGEMENT\n";
+        std::cout << "===========================\n";
+        std::cout << "1 - Login como Administrador\n";
+        std::cout << "2 - Login como Atendente\n";
+        std::cout << "0 - Sair\n";
+        std::cout << "---------------------------\n";
+        std::cout << "Escolha uma opção: ";
+        std::cin >> opcao;
 
-    // Atualizando
-    if (repoAdm.atualizarAdministrador(2, Administrador(2, "Fernanda Alves", 6000.0)))
-        std::cout << "\nAdministrador atualizado com sucesso!\n";
+        if (opcao == 0) break;
 
-    // Deletar
-    if (repoAdm.removerAdministrador(1))
-        std::cout << "Administrador removido com sucesso!\n";
+        limparTela();
+        std::cout << "Usuário: ";
+        std::cin >> usuario;
+        std::cout << "Senha: ";
+        std::cin >> senha;
 
-    // Lendo
-    std::cout << "\nLista após alterações:\n";
-    for (const auto& a : repoAdm.carregarAdministradores())
-        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
+        if (opcao == 1) {
+            auto* adm = repoAdm.autenticar(usuario, senha);
+            if (adm) {
+                std::cout << "Bem-vindo, " << adm->getNome() << "!\n";
+                pausar();
+                menuAdministrador();
+            } else {
+                std::cout << "Usuário ou senha incorretos.\n";
+                pausar();
+            }
+        } else if (opcao == 2) {
+            auto* at = repoAt.autenticar(usuario, senha);
+            if (at) {
+                std::cout << "Bem-vindo, " << at->getNome() << "!\n";
+                pausar();
+                menuAtendente();
+            } else {
+                std::cout << "Usuário ou senha incorretos.\n";
+                pausar();
+            }
+        }
+    }
 
+    limparTela();
+    std::cout << "👋 Encerrando o sistema...\n";
     return 0;
+
 }
