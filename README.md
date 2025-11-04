@@ -48,7 +48,8 @@ O sistema é composto pelas seguintes classes:
 
 Legenda: Tela inicial do programa
 
-![1](https://github.com/user-attachments/assets/b58d53ec-1f7e-47a0-a19e-a3a6c7abd63b)
+![11](https://github.com/user-attachments/assets/c3d47e9d-7f8e-4a40-8c78-f0446d679613)
+
 
 Legenda: Menu do administrador após fazer login
 
@@ -59,10 +60,6 @@ Legenda: Menu do atendente após fazer login
 ![4](https://github.com/user-attachments/assets/ccf8365b-8963-49f5-bdaa-cebdf074796f)
 
 Legenda: Cadastro de filme
-
-![11](https://github.com/user-attachments/assets/d5efef05-cb85-41ac-b3df-a4920918b815)
-
-Legenda: Tela do administrador após fazer login
 
 ---
 
