@@ -1,13 +1,16 @@
 #include "../../include/Administrador.h"
+#include "../../include/View/MenuAdministrador.h"
+
+
 // Construtor
 Administrador::Administrador(int id, const std::string& nome, double salario, const std::string& usuario, const std::string& senha)
     : Funcionario(id, nome, "Administrador", salario, usuario, senha) {}
 
 // Implementação dos Métodos
 void Administrador::executarTarefa() const {
-    std::cout << "Administrador " << nome
-              << " é responsável por cadastrar filmes, salas e sessões."
-              << std::endl;
+    std::cout << "Bem-vindo, Administrador " << nome << "!\n";
+    std::cout << "Acessando o painel de gerenciamento...\n\n";
+    menuAdministrador(const_cast<Administrador&>(*this));
 }
 
 void Administrador::cadastrarFilme() {
