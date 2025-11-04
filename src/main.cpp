@@ -7,7 +7,7 @@
 #include "../include/Administrador.h"
 #include "../include/Atendente.h"
 #include "../include/RepositorioAtendente.h"
-
+#include "../include/RepositorioAdministrador.h"
 
 using namespace std;
 int main () {
@@ -69,6 +69,32 @@ int main () {
     // listar
     std::cout << "\nLista após alterações:\n";
     for (const auto& a : repo.carregarAtendentes())
+        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
+
+    // teste do repositório do administrador
+    RepositorioAdministrador repoAdm("../data/administradores.csv");
+
+    // 1️⃣ criando
+    repoAdm.limparArquivo();
+    repoAdm.adicionarAdministrador(Administrador(1, "Carlos Lima", 5000.0));
+    repoAdm.adicionarAdministrador(Administrador(2, "Fernanda Alves", 5500.0));
+
+    // lendo
+    std::cout << "Lista de administradores:\n";
+    for (const auto& a : repoAdm.carregarAdministradores())
+        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
+
+    // Atualizando
+    if (repoAdm.atualizarAdministrador(2, Administrador(2, "Fernanda Alves", 6000.0)))
+        std::cout << "\nAdministrador atualizado com sucesso!\n";
+
+    // Deletar
+    if (repoAdm.removerAdministrador(1))
+        std::cout << "Administrador removido com sucesso!\n";
+
+    // Lendo
+    std::cout << "\nLista após alterações:\n";
+    for (const auto& a : repoAdm.carregarAdministradores())
         std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
 
     return 0;

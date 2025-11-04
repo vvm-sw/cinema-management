@@ -1,7 +1,3 @@
-//
-// Created by joaow on 01/11/2025.
-//
-
 #ifndef CINEMA_MANAGEMENT_ADMINISTRADOR_H
 #define CINEMA_MANAGEMENT_ADMINISTRADOR_H
 
