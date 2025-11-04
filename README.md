@@ -60,6 +60,10 @@ Legenda: Menu do atendente após fazer login
 
 Legenda: Cadastro de filme
 
+![11](https://github.com/user-attachments/assets/d5efef05-cb85-41ac-b3df-a4920918b815)
+
+Legenda: Tela do administrador após fazer login
+
 ---
 
 ## 📎 Links Úteis
