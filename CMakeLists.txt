@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 4.0)
 project(cinema_management)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 include_directories("include")
 
@@ -15,4 +15,6 @@ add_executable(cinema_management
         src/Model/Funcionario.cpp
         src/Model/Administrador.cpp
         src/Model/Atendente.cpp
+        src/Repository/CinemaRepositorio.cpp
 )
+
