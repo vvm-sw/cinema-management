@@ -21,27 +21,27 @@ int main () {
     // cout << c.getAbertura().tm_hour << endl;
     // cout << s.getNome() << endl;
 
-    // RepositorioFilmes repo("filmes.csv");
-    // runFilmeMenu(repo); // <-- use a função diretamente
+    RepositorioFilmes repo("filmes.csv");
+    runFilmeMenu(repo); // <-- use a função diretamente
 
-    // // teste da classe Administrador
-    // Administrador admin(1, "Pedro", 5000.0);
+    // teste da classe Administrador
+    Administrador admin(1, "Pedro", 5000.0);
 
-    // admin.exibirInfo();
-    // admin.executarTarefa();
+    admin.exibirInfo();
+    admin.executarTarefa();
 
-    // admin.cadastrarFilme();
-    // admin.cadastrarSala();
-    // admin.cadastrarSessao();
+    admin.cadastrarFilme();
+    admin.cadastrarSala();
+    admin.cadastrarSessao();
 
-    // // teste da classe Atendente
-    // Atendente aten(2, "João", 2500.0);
+    // teste da classe Atendente
+    Atendente aten(2, "João", 2500.0);
 
-    // aten.exibirInfo();
-    // aten.executarTarefa();
+    aten.exibirInfo();
+    aten.executarTarefa();
 
-    // aten.venderIngresso();
-    // aten.cancelarVenda();
+    aten.venderIngresso();
+    aten.cancelarVenda();
     struct tm abertura {.tm_min = 0, .tm_hour = 13};
     struct tm fechamento {.tm_min = 0, .tm_hour = 22};
     Cinema c(1, "Cinema1", "endereco1", abertura, fechamento);
