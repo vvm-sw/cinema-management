@@ -64,7 +64,7 @@ Legenda: Cadastro de filme
 
 ## 📎 Links Úteis
 
-- 📒 Relatório do projeto (Documentação): [[Acessar]([https://docs.google.com/document/d/1y8hEiVqIeo23cP1Dfm8pWYSext3sXQwAs7VtA4Fhvvw/edit?usp=sharing](https://docs.google.com/document/d/11xFoJa0GqD1NjKzfLemEL894lhmg19mwjZ_aK_2ZWMk/edit?usp=sharing)
+- 📒 Relatório do projeto (Documentação): [[Acessar](https://docs.google.com/document/d/1y8hEiVqIeo23cP1Dfm8pWYSext3sXQwAs7VtA4Fhvvw/edit?usp=sharing](https://docs.google.com/document/d/11xFoJa0GqD1NjKzfLemEL894lhmg19mwjZ_aK_2ZWMk/edit?usp=sharing)
 
 - 📽 Video Gravação da Equipe (Documentação): [Acessar](https://youtube.com)
 
