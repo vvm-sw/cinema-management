@@ -6,6 +6,8 @@
 #include "../include/FilmeCLI.h"
 #include "../include/Administrador.h"
 #include "../include/Atendente.h"
+#include "../include/RepositorioAtendente.h"
+#include "../include/RepositorioAdministrador.h"
 
 using namespace std;
 int main () {
@@ -20,8 +22,8 @@ int main () {
     cout << c.getAbertura().tm_hour << endl;
     cout << s.getNome() << endl;
 
-    RepositorioFilmes repo("filmes.csv");
-    runFilmeMenu(repo); // <-- use a função diretamente
+    //RepositorioFilmes repo("filmes.csv");
+    //runFilmeMenu(repo); // <-- use a função diretamente
 
     // teste da classe Administrador
     Administrador admin(1, "Pedro", 5000.0);
@@ -41,5 +43,59 @@ int main () {
 
     aten.venderIngresso();
     aten.cancelarVenda();
+
+    // teste do repositorio da classe Atendente
+    RepositorioAtendente repo("../data/atendentes.csv");
+
+    // criando
+    repo.limparArquivo();
+    repo.adicionarAtendente(Atendente(1, "João Silva", 2500.0));
+    repo.adicionarAtendente(Atendente(2, "Maria Souza", 2700.0));
+
+    // listando
+    auto lista = repo.carregarAtendentes();
+    std::cout << "Lista inicial:\n";
+    for (const auto& a : lista)
+        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
+
+    // atualizar
+    if (repo.atualizarAtendente(2, Atendente(2, "Maria Souza", 3000.0)))
+        std::cout << "\nAtendente atualizado com sucesso!\n";
+
+    // deletar
+    if (repo.removerAtendente(1))
+        std::cout << "\nAtendente removido com sucesso!\n";
+
+    // listar
+    std::cout << "\nLista após alterações:\n";
+    for (const auto& a : repo.carregarAtendentes())
+        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
+
+    // teste do repositório do administrador
+    RepositorioAdministrador repoAdm("../data/administradores.csv");
+
+    // 1️⃣ criando
+    repoAdm.limparArquivo();
+    repoAdm.adicionarAdministrador(Administrador(1, "Carlos Lima", 5000.0));
+    repoAdm.adicionarAdministrador(Administrador(2, "Fernanda Alves", 5500.0));
+
+    // lendo
+    std::cout << "Lista de administradores:\n";
+    for (const auto& a : repoAdm.carregarAdministradores())
+        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
+
+    // Atualizando
+    if (repoAdm.atualizarAdministrador(2, Administrador(2, "Fernanda Alves", 6000.0)))
+        std::cout << "\nAdministrador atualizado com sucesso!\n";
+
+    // Deletar
+    if (repoAdm.removerAdministrador(1))
+        std::cout << "Administrador removido com sucesso!\n";
+
+    // Lendo
+    std::cout << "\nLista após alterações:\n";
+    for (const auto& a : repoAdm.carregarAdministradores())
+        std::cout << a.getId() << " - " << a.getNome() << " - R$" << a.getSalario() << "\n";
+
     return 0;
 }

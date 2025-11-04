@@ -5,12 +5,6 @@
 #include <iostream>
 
 class Funcionario {
-protected:
-    int id;
-    std::string nome;
-    std::string cargo;
-    double salario;
-
 public:
     // Construtor e destrutor
     Funcionario(int id, const std::string& nome, const std::string& cargo, double salario);
@@ -29,6 +23,13 @@ public:
     // Métodos
     virtual void exibirInfo() const;
     virtual void executarTarefa() const = 0;
+
+protected:
+    int id;
+    std::string nome;
+    std::string cargo;
+    double salario;
+
 
 };
 
