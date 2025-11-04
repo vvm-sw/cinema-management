@@ -17,5 +17,6 @@ add_executable(cinema_management
         src/Model/Atendente.cpp
         src/Model/RepositorioAtendente.cpp
         src/Model/RepositorioAdministrador.cpp
-        include/RepositorioAdministrador.h
+        src/view/MenuAdministrador.cpp
+        src/view/MenuAtendente.cpp
 )
