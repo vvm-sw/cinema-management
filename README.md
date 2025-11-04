@@ -53,13 +53,13 @@ Legenda: Tela inicial do programa
 
 Legenda: Menu do administrador após fazer login
 
+![4](https://github.com/user-attachments/assets/8812b06f-cfca-4e27-8117-f5d580d53621)
+
+Legenda: Cadastro de filme
+
 ![3](https://github.com/user-attachments/assets/bace9c08-f4d5-42d6-b4fd-1806a8e6d90c)
 
 Legenda: Menu do atendente após fazer login
-
-![4](https://github.com/user-attachments/assets/ccf8365b-8963-49f5-bdaa-cebdf074796f)
-
-Legenda: Cadastro de filme
 
 ---
 
