@@ -1,39 +1,28 @@
-# Cinema Management System
-Cinema (chain) management system. Toy project for class Estruturas de Dados Orientadas a Objetos 2025.2 at Universidade Federal de Pernambuco (UFPE) - Centro de Informática (CIn).
+# SGC - Sistema de Gestão de Cinema
+Projeto desenvolvido para a disciplina de Estrutura de dados orientada a objetos(EDOO), utilizando a linguagem C++ e os princípios fundamentais da Programação Orientada a Objetos.
 
-The Cinema Management System 9000 covers everything that your avarage cinema chains needs. Manage your Movies, Employees, Cinema Rooms, Seats and even the POPCORN (just a joke)!
+📌 Objetivo
 
-## Classes
+O propósito do SGC é ser um sistema voltado para o gerenciamento de uma rede de cinemas, aplicando de forma prática os princípios e conceitos da Programação Orientada a Objetos (POO). A proposta visa criar uma solução organizada, modular e de fácil manutenção, que permita o controle eficiente de filmes, sessões, salas, refletindo um cenário real de aplicação de software no contexto de entretenimento.
+
+🧩 Arquitetura do Sistema
+
+O sistema é composto pelas seguintes classes:
+
 * Sala
 * Filme
 * Ingresso
-* Funcionário
-* Criar requisitos <- Task
+* Sessão
+* Funcionário e etc.
 
-## Resources/References:
+🧱 Tecnologias e Ferramentas
 
-### Database
-Possibilities
+* 🖥️ Linguagem: C++
+* 💾 Paradigma: Programação Orientada a Objetos
+* 📋 Documentação: Google Docs, Youtube
+* 🌐 Interface Web: HTML/CSS + (GitHub Pages)
 
-* https://pqxx.org/development/libpqxx/
-* https://www.postgresql.org/docs/current/libpq.html
+📷 Galeria de fotos do Projeto
 
-Mockdata:
-* https://www.mockaroo.com/
-### GUI
-* Tem GTK e QT (citada pelo prof.) mas também tava vendo uns fórums:
-* https://www.reddit.com/r/cpp/comments/1871fzm/what_are_your_goto_c_gui_libraries_in_2023/
-* https://www.reddit.com/r/cpp_questions/comments/17h1mlg/what_is_a_good_gui_library_for_a_complete/
-* https://www.reddit.com/r/Cplusplus/comments/119wvvr/what_truly_is_the_best_c_gui_library/
-
-
-
-* ImGui for simple quick work/prototyping
-* WxWidgets for relative simplicity
-* Qt but you'll haver to take some time away from your project to invest it in learning how to deal with Qt
-
-## Build
-
-CMake file?
-
-## Test (maybe it won't be covered)
+![Imagem do WhatsApp de 2025-11-04 à(s) 16 37 00_52ff63b4](https://github.com/user-attachments/assets/92e83ce3-2766-4cb1-87d5-27040e13b123)
+Legenda: Tela inicial do programa
