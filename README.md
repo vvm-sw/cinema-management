@@ -53,7 +53,7 @@ Legenda: Tela inicial do programa
 
 Legenda: Menu do administrador após fazer login
 
-![4](https://github.com/user-attachments/assets/8812b06f-cfca-4e27-8117-f5d580d53621)
+![4](https://github.com/user-attachments/assets/dd6d1b69-cd79-4553-89c0-807b892a46cd)
 
 Legenda: Cadastro de filme
 
