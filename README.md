@@ -1,4 +1,4 @@
-# SGC - Sistema de Gestão de Cinema
+# SGC - Sistema de Gestão de Cinema 🎬
 Projeto desenvolvido para a disciplina de Estrutura de dados orientada a objetos(EDOO), utilizando a linguagem C++ e os princípios fundamentais da Programação Orientada a Objetos.
 
 📌 Objetivo
@@ -25,4 +25,17 @@ O sistema é composto pelas seguintes classes:
 📷 Galeria de fotos do Projeto
 
 ![Imagem do WhatsApp de 2025-11-04 à(s) 16 37 00_52ff63b4](https://github.com/user-attachments/assets/92e83ce3-2766-4cb1-87d5-27040e13b123)
+
 Legenda: Tela inicial do programa
+
+![1](https://github.com/user-attachments/assets/b58d53ec-1f7e-47a0-a19e-a3a6c7abd63b)
+
+Legenda: Menu do administrador após fazer login
+
+![3](https://github.com/user-attachments/assets/bace9c08-f4d5-42d6-b4fd-1806a8e6d90c)
+
+Legenda: Menu do atendente após fazer login
+
+![4](https://github.com/user-attachments/assets/ccf8365b-8963-49f5-bdaa-cebdf074796f)
+
+Legenda: Cadastro de filme
