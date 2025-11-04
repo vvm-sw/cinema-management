@@ -1,3 +1,5 @@
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=66CDAA&height=120&section=header"/>
+
 ## SGC - Sistema de Gestão de Cinema 🎬
 Projeto desenvolvido para a disciplina de Estrutura de dados orientada a objetos(EDOO), utilizando a linguagem C++ e os princípios fundamentais da Programação Orientada a Objetos.
 
@@ -31,7 +33,7 @@ O sistema é composto pelas seguintes classes:
 
 ---
 
-## 🧱 Tecnologias e Ferramentas
+## ⚙ Tecnologias e Ferramentas
 
 * 🖥️ Linguagem: C++
 * 💾 Paradigma: Programação Orientada a Objetos
@@ -57,3 +59,13 @@ Legenda: Menu do atendente após fazer login
 ![4](https://github.com/user-attachments/assets/ccf8365b-8963-49f5-bdaa-cebdf074796f)
 
 Legenda: Cadastro de filme
+
+---
+
+## 📎 Links Úteis
+
+- 📒 Relatório do projeto (Documentação): [[Acessar]([https://docs.google.com/document/d/1y8hEiVqIeo23cP1Dfm8pWYSext3sXQwAs7VtA4Fhvvw/edit?usp=sharing](https://docs.google.com/document/d/11xFoJa0GqD1NjKzfLemEL894lhmg19mwjZ_aK_2ZWMk/edit?usp=sharing))
+
+- 📽 Video Gravação da Equipe (Documentação): [Acessar](https://youtube.com)
+
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=66CDAA&height=120&section=header"/>
