@@ -8,7 +8,7 @@
 class Administrador : public Funcionario {
 public:
     // Construtor
-    Administrador(int id, const std::string& nome, double salario);
+    Administrador(int id, const std::string& nome, double salario, const std::string& usuario = "", const std::string& senha = "");
 
     // Metodo obrigatorio da classe base, ainda irei ajustar
     void executarTarefa() const override;

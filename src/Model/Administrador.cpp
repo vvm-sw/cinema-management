@@ -1,7 +1,7 @@
 #include "../../include/Administrador.h"
 // Construtor
-Administrador::Administrador(int id, const std::string& nome, double salario)
-    : Funcionario(id, nome, "Administrador", salario) {}
+Administrador::Administrador(int id, const std::string& nome, double salario, const std::string& usuario, const std::string& senha)
+    : Funcionario(id, nome, "Administrador", salario, usuario, senha) {}
 
 // Implementação dos Métodos
 void Administrador::executarTarefa() const {

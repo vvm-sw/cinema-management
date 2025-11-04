@@ -1,7 +1,7 @@
 #include "../../include/Atendente.h"
 // Construtor
-Atendente::Atendente(int id, const std::string& nome, double salario)
-    : Funcionario(id, nome, "Atendente", salario) {}
+Atendente::Atendente(int id, const std::string& nome, double salario, const std::string& usuario, const std::string& senha)
+    : Funcionario(id, nome, "Atendente", salario, usuario, senha) {}
 
 // Implementação dos métodos
 void Atendente::executarTarefa() const {
