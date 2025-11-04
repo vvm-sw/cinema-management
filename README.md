@@ -11,11 +11,11 @@ O propósito do SGC é ser um sistema voltado para o gerenciamento de uma rede d
 
 ## 👨‍💻 Integrantes da Equipe
 
-- Andrews Anaxceu <aags>
-- João Witor <jwtcs>
-- José Ivan <jixvj>
-- Kaylanne Eduarda <kess>
-- Vinícius Vieira <vvm>
+- Andrews Anaxceu `<aags>`
+- João Witor `<jwtcs>`
+- José Ivan `<jixvj>`
+- Kaylanne Eduarda `<kess>`
+- Vinícius Vieira `<vvm>`
 
 ---
 
