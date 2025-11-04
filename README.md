@@ -37,7 +37,7 @@ O sistema é composto pelas seguintes classes:
 
 * 🖥️ Linguagem: C++
 * 💾 Paradigma: Programação Orientada a Objetos
-* 📋 Documentação: Google Docs, Youtube
+* 📋 Documentação: Google Docs, Youtube, github.io
 * 🌐 Interface Web: HTML/CSS + (GitHub Pages)
 
 ---
