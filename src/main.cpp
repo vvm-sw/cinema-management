@@ -3,17 +3,19 @@
 #endif
 #include "../include/RepositorioAdministrador.h"
 #include "../include/RepositorioAtendente.h"
+#include "../include/RepositorioFilmes.h"
 #include <iostream>
 #include <memory>
 
 int main() {
-    // Serve para permitar utilização de acentos no terminal
+    // Serve para permitir utilização de acentos no terminal
     #ifdef _WIN32
     SetConsoleOutputCP(CP_UTF8);
     #endif
 
     RepositorioAdministrador repoAdm("../data/administradores.csv");
     RepositorioAtendente repoAt("../data/atendentes.csv");
+    //RepositorioFilmes repoFilmes("../data/filmes.csv");
 
     int tipoLogin = -1;
     std::string usuario, senha;
