@@ -11,8 +11,12 @@ Administrador::Administrador(int id, const std::string& nome, double salario, co
 void Administrador::executarTarefa() const {
     std::cout << "Bem-vindo, Administrador " << nome << "!\n";
     std::cout << "Acessando o painel de gerenciamento...\n\n";
+
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
     menuAdministrador(const_cast<Administrador&>(*this));
 }
+
 
 void Administrador::cadastrarFilme() {
     std::string titulo, genero, descricao;
