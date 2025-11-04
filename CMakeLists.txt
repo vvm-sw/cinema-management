@@ -14,8 +14,5 @@ add_executable(cinema_management
         src/Model/FilmeCLI.cpp
         src/Model/Funcionario.cpp
         src/Model/Administrador.cpp
-        src/Model/Atendente.cpp)
-
-#find_package(libpqxx REQUIRED)
-#add_subdirectory(deps/libpqxx build-pqxx)
-#target_link_libraries(cinema_management PRIVATE pqxx)
+        src/Model/Atendente.cpp
+)
