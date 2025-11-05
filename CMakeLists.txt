@@ -20,4 +20,5 @@ add_executable(cinema_management
         src/view/MenuAtendente.cpp
         src/Model/RepositorioSalas.cpp
         include/RepositorioSalas.h
+        src/Model/RepositorioSessoes.cpp
 )
