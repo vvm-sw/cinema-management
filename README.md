@@ -67,7 +67,7 @@ Legenda: Menu do atendente após fazer login
 
 - 📒 Relatório do projeto (Documentação): [Acessar](https://docs.google.com/document/d/11xFoJa0GqD1NjKzfLemEL894lhmg19mwjZ_aK_2ZWMk/edit?usp=sharing)
 
-- - 📒 Página github.io: [Acessar](https://andrews-anaxceu.github.io/cinema-management/)
+- 📒 Página github.io: [Acessar](https://andrews-anaxceu.github.io/cinema-management/)
 
 - 📽 Video Gravação da Equipe (Documentação): [Acessar](https://youtube.com)
 
