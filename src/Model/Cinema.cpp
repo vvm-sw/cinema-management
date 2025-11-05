@@ -88,18 +88,9 @@ using namespace std;
      }
 
     const string Cinema::toCsv() {
-        string result =  std::to_string(getId()) + "," + CsvUtils::escapeCSV(getNome()) + "," + CsvUtils::escapeCSV(getEndereco() + "," + CsvUtils::escapeCSV(getAberturaStr())
-         + "," + CsvUtils::escapeCSV(getFechamentoStr()));
+        string result =  std::to_string(getId()) + "," + CsvUtils::escapeCSV(getNome()) + "," + CsvUtils::escapeCSV(getEndereco() + "," + getAberturaStr()
+         + "," + getFechamentoStr());
      return result;
-        // string funcionarios = "";
-        //   for (const auto& id : getFuncionarioIds()) {
-        //     funcionarios.append(to_string(id) + ";");
-        //   }
-        // funcionarios.append(",");
-        // string salas = "";
-        //   for (const auto& id : getSalaIds()) {
-        //     salas.append(to_string(id) + ";");
-        //   }
     }
 
     const tm Cinema::stringToTm (const string& horario) {
