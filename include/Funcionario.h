@@ -10,10 +10,12 @@ protected:
     std::string nome;
     std::string cargo;
     double salario;
+    std::string usuario;
+    std::string senha;
 
 public:
     // Construtor e destrutor
-    Funcionario(int id, const std::string& nome, const std::string& cargo, double salario);
+    Funcionario(int id, const std::string& nome, const std::string& cargo, double salario, const std::string& usuario = "", const std::string& senha = "");
     virtual ~Funcionario() = default;
 
     // Getters e Setters
@@ -21,10 +23,14 @@ public:
     std::string getNome() const;
     std::string getCargo() const;
     double getSalario() const;
+    std::string getUsuario() const;
+    std::string getSenha() const;
 
     void setNome(const std::string& novoNome);
     void setCargo(const std::string& novoCargo);
     void setSalario(double novoSalario);
+    void setUsuario(const std::string& novoUser);
+    void setSenha(const std::string& novaSenha);
 
     // Métodos
     virtual void exibirInfo() const;

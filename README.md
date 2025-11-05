@@ -1,39 +1,90 @@
-# Cinema Management System
-Cinema (chain) management system. Toy project for class Estruturas de Dados Orientadas a Objetos 2025.2 at Universidade Federal de Pernambuco (UFPE) - Centro de Informática (CIn).
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=66CDAA&height=120&section=header"/>
 
-The Cinema Management System 9000 covers everything that your avarage cinema chains needs. Manage your Movies, Employees, Cinema Rooms, Seats and even the POPCORN (just a joke)!
+## SGC - Sistema de Gestão de Cinema 🎬
+Projeto desenvolvido para a disciplina de Estrutura de dados orientada a objetos(EDOO), utilizando a linguagem C++ e os princípios fundamentais da Programação Orientada a Objetos.
 
-## Classes
+---
+
+## 📌 Objetivo
+
+O propósito do SGC é ser um sistema voltado para o gerenciamento de uma rede de cinemas, aplicando de forma prática os princípios e conceitos da Programação Orientada a Objetos (POO). A proposta visa criar uma solução organizada, modular e de fácil manutenção, que permita o controle eficiente de filmes, sessões, salas, refletindo um cenário real de aplicação de software no contexto de entretenimento.
+
+---
+
+## 👨‍💻 Integrantes da Equipe
+
+- Andrews Anaxceu `<aags>`
+- João Witor `<jwtcs>`
+- José Ivan `<jixvj>`
+- Kaylanne Eduarda `<kess>`
+- Vinícius Vieira `<vvm>`
+
+---
+
+## 🧩 Arquitetura do Sistema
+
+O sistema é composto pelas seguintes classes:
+
 * Sala
 * Filme
 * Ingresso
-* Funcionário
-* Criar requisitos <- Task
+* Sessão
+* Funcionário e etc.
 
-## Resources/References:
+---
 
-### Database
-Possibilities
+## ⚙ Tecnologias e Ferramentas
 
-* https://pqxx.org/development/libpqxx/
-* https://www.postgresql.org/docs/current/libpq.html
+* 🖥️ Linguagem: C++
+* 💾 Paradigma: Programação Orientada a Objetos
+* 📋 Documentação: Google Docs, Youtube, github.io
+* 🌐 Interface Web: HTML/CSS + (GitHub Pages)
 
-Mockdata:
-* https://www.mockaroo.com/
-### GUI
-* Tem GTK e QT (citada pelo prof.) mas também tava vendo uns fórums:
-* https://www.reddit.com/r/cpp/comments/1871fzm/what_are_your_goto_c_gui_libraries_in_2023/
-* https://www.reddit.com/r/cpp_questions/comments/17h1mlg/what_is_a_good_gui_library_for_a_complete/
-* https://www.reddit.com/r/Cplusplus/comments/119wvvr/what_truly_is_the_best_c_gui_library/
+---
 
+## 📷 Galeria de fotos do Projeto
 
+![10](https://github.com/user-attachments/assets/6e518583-e248-48bb-9707-9830a4c47d61)
 
-* ImGui for simple quick work/prototyping
-* WxWidgets for relative simplicity
-* Qt but you'll haver to take some time away from your project to invest it in learning how to deal with Qt
+Legenda: Tela inicial do programa.
 
-## Build
+![15](https://github.com/user-attachments/assets/67d3fc1e-5251-4226-8f4b-94bfe4f06eff)
 
-CMake file?
+Legenda: Menu do administrador após fazer login.
 
-## Test (maybe it won't be covered)
+![12](https://github.com/user-attachments/assets/6eb3a8eb-7e59-46c4-abed-5fd925b3e4e7)
+
+Legenda: Menu do atendente após fazer login.
+
+![17](https://github.com/user-attachments/assets/310a15ca-13c3-4b9a-aa3d-717c622db0d5)
+
+Legenda: Cadastrando um filme.
+
+![16](https://github.com/user-attachments/assets/04700a79-ceec-4df3-a70a-6137d9926d56)
+
+Legenda: Parte de gerenciamento do CRUD de filmes.
+
+---
+
+## Informações para execução no terminal
+
+Deixamos um Administrador e um Atendente já cadastrado nos repositórios para facilitar o login no sistema.
+Abaixo seguem o usuário e a senha:
+- Administrador:
+  - Usuário: admin
+  - senha: 1234
+- Atendente:
+  - Usuário: joao
+  - senha: abcd
+
+----
+
+## 📎 Links Úteis
+
+- 📒 Relatório do projeto (Documentação): [Acessar](https://docs.google.com/document/d/11xFoJa0GqD1NjKzfLemEL894lhmg19mwjZ_aK_2ZWMk/edit?usp=sharing)
+
+- 📒 Página github.io: [Acessar](https://andrews-anaxceu.github.io/cinema-management/)
+
+- 📽 Video Gravação da Equipe (Documentação): [Acessar](https://youtube.com)
+
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=66CDAA&height=120&section=header"/>

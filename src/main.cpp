@@ -1,53 +1,64 @@
-
-#include <iostream>
-#include "../include/Cinema.h"
-#include "../include/Sala.h"
+#ifdef _WIN32
+#include <windows.h>
+#endif
+#include "../include/RepositorioAdministrador.h"
+#include "../include/RepositorioAtendente.h"
 #include "../include/RepositorioFilmes.h"
-#include "../include/FilmeCLI.h"
-#include "../include/Administrador.h"
-#include "../include/Atendente.h"
-#include "../include/CinemaRepositorio.h"
+#include <iostream>
+#include <memory>
 
-using namespace std;
-int main () {
-    // Cinema c = Cinema();
-    // Sala s = Sala();
-    // s.setNome("2D");
-    // //c = new cinema();
-    // c.setNome("UCI");
-    // c.setEndereco("Av. República do Líbano - Recife/PE");
-    // struct tm abertura {.tm_hour = 10};
-    // c.setAbertura(abertura);
-    // cout << c.getAbertura().tm_hour << endl;
-    // cout << s.getNome() << endl;
+int main() {
+    // Serve para permitir utilização de acentos no terminal
+    #ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8);
+    #endif
 
-    RepositorioFilmes repo("filmes.csv");
-    runFilmeMenu(repo); // <-- use a função diretamente
+    RepositorioAdministrador repoAdm("../data/administradores.csv");
+    RepositorioAtendente repoAt("../data/atendentes.csv");
 
-    // teste da classe Administrador
-    Administrador admin(1, "Pedro", 5000.0);
+    int tipoLogin = -1;
+    std::string usuario, senha;
+    std::unique_ptr<Funcionario> funcionario; //
 
-    admin.exibirInfo();
-    admin.executarTarefa();
+    while (true) {
+        system("cls");
+        std::cout << "===========================\n";
+        std::cout << "   CINEMA MANAGEMENT\n";
+        std::cout << "===========================\n";
+        std::cout << "1 - Login como Administrador\n";
+        std::cout << "2 - Login como Atendente\n";
+        std::cout << "0 - Sair\n";
+        std::cout << "Escolha: ";
+        std::cin >> tipoLogin;
 
-    admin.cadastrarFilme();
-    admin.cadastrarSala();
-    admin.cadastrarSessao();
+        if (tipoLogin == 0) {
+            std::cout << "Encerrando o sistema...\n";
+            break;
+        }
 
-    // teste da classe Atendente
-    Atendente aten(2, "João", 2500.0);
+        std::cout << "Usuário: ";
+        std::cin >> usuario;
+        std::cout << "Senha: ";
+        std::cin >> senha;
 
-    aten.exibirInfo();
-    aten.executarTarefa();
+        if (tipoLogin == 1) {
+            auto* adm = repoAdm.autenticar(usuario, senha);
+            if (adm) funcionario.reset(adm);
+        } else if (tipoLogin == 2) {
+            auto* at = repoAt.autenticar(usuario, senha);
+            if (at) funcionario.reset(at);
+        }
+        if (funcionario) {
+            funcionario->executarTarefa();
+            funcionario.reset();
 
-    aten.venderIngresso();
-    aten.cancelarVenda();
-    struct tm abertura {.tm_min = 0, .tm_hour = 13};
-    struct tm fechamento {.tm_min = 0, .tm_hour = 22};
-    Cinema c(1, "Cinema1", "endereco1", abertura, fechamento);
-    CinemaRepositorio cr("cinemas.csv");
-    cr.criarCinema(c);
-    cr.deletarCinema(c.getId());
+        } else {
+            std::cout << "Usuário ou senha incorretos!\n";
+            std::cin.ignore();
+            std::cin.get();
+        }
+    }
 
+    std::cout << "Encerrando o sistema...\n";
     return 0;
 }

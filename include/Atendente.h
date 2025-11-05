@@ -8,7 +8,7 @@
 class Atendente : public Funcionario {
 public:
     // Construtor
-    Atendente(int id, const std::string& nome, double salario);
+    Atendente(int id, const std::string& nome, double salario, const std::string& usuario = "", const std::string& senha = "");
 
     // Metodo obrigatorio da classe herdada, ainda irei ajustar
     void executarTarefa() const override;

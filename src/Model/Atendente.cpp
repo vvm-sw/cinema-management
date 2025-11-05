@@ -1,13 +1,15 @@
 #include "../../include/Atendente.h"
+#include "../../include/View/MenuAtendente.h"
+
 // Construtor
-Atendente::Atendente(int id, const std::string& nome, double salario)
-    : Funcionario(id, nome, "Atendente", salario) {}
+Atendente::Atendente(int id, const std::string& nome, double salario, const std::string& usuario, const std::string& senha)
+    : Funcionario(id, nome, "Atendente", salario, usuario, senha) {}
 
 // Implementação dos métodos
 void Atendente::executarTarefa() const {
-    std::cout << "Atendente " << nome
-              << " é responsável por realizar e cancelar vendas de ingressos."
-              << std::endl;
+    std::cout << "Bem-vindo, Atendente " << nome << "!\n";
+    std::cout << "Acessando o painel de vendas...\n\n";
+    menuAtendente(const_cast<Atendente&>(*this));
 }
 
 void Atendente::venderIngresso() {

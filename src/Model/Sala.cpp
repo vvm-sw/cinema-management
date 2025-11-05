@@ -1,50 +1,57 @@
 #include "../include/Sala.h"
-
 using namespace std;
-//Sala::Sala(const int id, const string& nome, const int capacidade, vector<vector<bool>> assentos, const TipoSala tipoSala) :
-//id(id), nome(nome), capacidade(capacidade), assentos(assentos), tipoSala(tipoSala)
-Sala::Sala(const int id, const string& nome, const int capacidade, vector<vector<bool>> assentos, const TipoSala tipoSala) {
-    this->id = id;
-    this->nome = nome;
-    this->capacidade = capacidade;
-    this->assentos = assentos;
-    this->tipoSala = tipoSala;
+
+// Construtor completo
+Sala::Sala(const int id, const string& nome, const int capacidade,
+           vector<vector<bool>> assentos, const TipoSala tipoSala)
+    : id(id), nome(nome), capacidade(capacidade), assentos(assentos), tipoSala(tipoSala) {}
+
+// Construtor padrão
+Sala::Sala()
+    : id(0), tipoSala(TipoSala::_2D), nome(""), capacidade(0),
+      assentos(vector<vector<bool>>()) {}
+
+// Destrutor
+Sala::~Sala() {}
+
+// Getters
+int Sala::getId() const {
+    return id;
 }
 
-Sala::Sala() {
-    nome = "";
-    capacidade = 0;
-    assentos = vector<vector<bool>>();
-    tipoSala = TipoSala::_2D;
+Sala::TipoSala Sala::getTipoSala() const {
+    return tipoSala;
 }
-Sala::~Sala() {}
-const int Sala::getId() {
- return id;
+
+string Sala::getNome() const {
+    return nome;
 }
-const Sala::TipoSala Sala::getTipoSala() {
- return tipoSala;
+
+int Sala::getCapacidade() const {
+    return capacidade;
 }
-const string Sala::getNome() {
-return nome;
+
+vector<vector<bool>> Sala::getAssentos() const {
+    return assentos;
 }
-const int Sala::getCapacidade() {
-return capacidade;
-}
-const vector<vector<bool>> Sala::getAssentos() {
-return assentos;
-}
+
+//Setters
 void Sala::setId(int id) {
-this->id = id;
+    this->id = id;
 }
+
 void Sala::setTipoSala(TipoSala tipo) {
-this->id = id;
+    this->tipoSala = tipo;
 }
+
 void Sala::setNome(const string& nome) {
-this->nome = nome;
+    this->nome = nome;
 }
+
 void Sala::setCapacidade(int capacidade) {
-this->capacidade = capacidade;
+    this->capacidade = capacidade;
 }
+
 void Sala::setAssentos(vector<vector<bool>>& assentos) {
-this->assentos = assentos;
+    this->assentos = assentos;
 }
