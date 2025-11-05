@@ -56,7 +56,7 @@ Legenda: Menu do administrador após fazer login.
 
 Legenda: Menu do atendente após fazer login.
 
-![14](https://github.com/user-attachments/assets/308f03f3-80f7-462b-91ed-48caef00271b)
+![17](https://github.com/user-attachments/assets/310a15ca-13c3-4b9a-aa3d-717c622db0d5)
 
 Legenda: Cadastrando um filme.
 
