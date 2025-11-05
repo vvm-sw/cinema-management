@@ -18,6 +18,7 @@ public:
     // Cinema(const std::string& nome, const std::string& endereco, const std::tm& abertura, const std::tm& fechamento, const std::vector<Sala>& salas, const std::vector<Funcionario>& funcionarios);
     Cinema(const int id, const std::string& nome, const std::string& endereco, const std::tm& abertura, const std::tm& fechamento, const std::vector<Sala>& salas, const std::vector<Funcionario*> funcionarios);
     Cinema(const int id, const std::string& nome, const std::string& endereco, const std::tm& abertura, const std::tm& fechamento);
+    Cinema(const std::string& nome, const std::string& endereco, const std::tm& abertura, const std::tm& fechamento);
     Cinema();  // Optional
     ~Cinema();
     const int getId();
@@ -31,6 +32,7 @@ public:
     const std::vector<Funcionario*> getFuncionarios();
     const std::vector<int> getSalaIds();
     const std::vector<int> getFuncionarioIds();
+    void setId(const int id);
     void setNome(const std::string& nome);
     void setEndereco(const std::string& endereco);
     void setAbertura(const std::tm& abertura);
@@ -41,5 +43,6 @@ public:
     const std::string toCsv();
     const Cinema csvToCinema(const std::string& line);
     const tm stringToTm (const std::string& horario);
+    const bool isEmpty();
 };
 #endif

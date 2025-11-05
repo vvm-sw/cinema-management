@@ -8,8 +8,13 @@ using namespace std;
 
    Cinema::Cinema(const int id, const string& nome, const string& endereco, const tm& abertura, const tm& fechamento, const vector<Sala>& salas, const vector<Funcionario*> funcionarios) : id(id), nome(nome), endereco(endereco), abertura(abertura), fechamento(fechamento), salas(salas), funcionarios(funcionarios) {}
    Cinema::Cinema(const int id, const string& nome, const string& endereco, const tm& abertura, const tm& fechamento) : id(id), nome(nome), endereco(endereco), abertura(abertura), fechamento(fechamento)  {}
+   Cinema::Cinema(const string& nome, const string& endereco, const tm& abertura, const tm& fechamento) : nome(nome), endereco(endereco), abertura(abertura), fechamento(fechamento)
+   {
+     id = -1;
+   }
 
     Cinema::Cinema() {
+      id = -1;
       this->nome = "";
       this->endereco = "";
     }
@@ -27,13 +32,13 @@ using namespace std;
       return abertura;
    }
     const string Cinema::getAberturaStr() {
-      return abertura.tm_hour + ":" + abertura.tm_min;
+      return to_string(abertura.tm_hour) + ":" + to_string(abertura.tm_min);
    }
     const tm Cinema::getFechamento() {
       return fechamento;
    }
     const string Cinema::getFechamentoStr() {
-      return fechamento.tm_hour + ":" + fechamento.tm_min;
+      return to_string(fechamento.tm_hour) + ":" + to_string(fechamento.tm_min);
    }
     const vector<Sala> Cinema::getSalas() {
       return salas;
@@ -54,6 +59,9 @@ using namespace std;
         result.push_back(f->getId());
       }
       return result;
+    }
+    void Cinema::setId(const int id) {
+     this->id = id;
     }
     void Cinema::setNome(const string& nome) {
       this->nome = nome;
@@ -80,7 +88,7 @@ using namespace std;
      }
 
     const string Cinema::toCsv() {
-        string result =  std::to_string(getId()) + CsvUtils::escapeCSV(getNome()) + "," + CsvUtils::escapeCSV(getEndereco() + "," + CsvUtils::escapeCSV(getAberturaStr())
+        string result =  std::to_string(getId()) + "," + CsvUtils::escapeCSV(getNome()) + "," + CsvUtils::escapeCSV(getEndereco() + "," + CsvUtils::escapeCSV(getAberturaStr())
          + "," + CsvUtils::escapeCSV(getFechamentoStr()));
      return result;
         // string funcionarios = "";
@@ -124,3 +132,7 @@ using namespace std;
       
       return Cinema(id, nome, endereco, tmAbertura, tmFechamento);
     }
+const bool Cinema::isEmpty()
+{
+  return getId() == -1 || getNome().empty() || getEndereco().empty();
+}

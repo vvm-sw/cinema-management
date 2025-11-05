@@ -12,11 +12,15 @@ public:
     }
     static int getNextId(const std::string& filepath) {
        std::ifstream in(filepath);
-       std::ofstream out(filepath);
+
        std::string idStr;
        std::getline(in, idStr);
        int id = std::stoi(idStr);
+        in.close();
+        std::ofstream out(filepath);
        out << id+1;
+        out.close();
+
        return id;
     }
 

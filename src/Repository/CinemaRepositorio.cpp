@@ -1,5 +1,7 @@
 #include "../../include/CinemaRepositorio.h"
 #include <fstream>
+
+#include "../CsvUtils.h"
 using namespace std;
 
 CinemaRepositorio::CinemaRepositorio(const string &filepath) : filepath(filepath) {}
@@ -12,7 +14,6 @@ const std::string CinemaRepositorio::getFilepath()
 
 const Cinema CinemaRepositorio::criarCinema(Cinema &cinema)
 {
-
     string filepath = getFilepath();
     std::ofstream out(filepath, std::ios_base::app);
     if (!out)
@@ -21,6 +22,8 @@ const Cinema CinemaRepositorio::criarCinema(Cinema &cinema)
         return Cinema();
         // return;
     }
+    if (cinema.getId() == -1) cinema.setId(CsvUtils::getNextId("id_counter.txt"));
+
     out << cinema.toCsv() << "\n";
     return cinema;
 }
@@ -55,7 +58,7 @@ const Cinema CinemaRepositorio::getCinema(int id)
             cout << "Erro lendo Cinema ID " << id << endl;
         }
         in.close();
-        return Cinema(); // Cinema vazio, checar na camada acima Implementar método isEmpty
+        return Cinema();
     }
 }
 const Cinema CinemaRepositorio::atualizarCinema(Cinema &cinema)
@@ -64,6 +67,7 @@ const Cinema CinemaRepositorio::atualizarCinema(Cinema &cinema)
         return criarCinema(cinema);
     }
     cout << "Cinema " + to_string(cinema.getId()) + " não encontrado." << endl;
+    return Cinema ();
 }
 const bool CinemaRepositorio::deletarCinema(int id)
 {
@@ -77,7 +81,7 @@ const bool CinemaRepositorio::deletarCinema(int id)
         cout << "Arquivo " << filepath << "não encontrado." << endl;
         return false;
     }
-
+    bool found = false;
     std::string linha;
     while (std::getline(in, linha))
     {
@@ -86,22 +90,25 @@ const bool CinemaRepositorio::deletarCinema(int id)
         try
         {
             int csvId = stoi(linha.substr(0, linha.find(',')));
-            if (id != csvId)
+            if (id == csvId)
             {
-                out << linha;
+                found = true;
+                cout << "Found record " << id << " to delete." << endl;
+                continue;
             }
+            out << linha;
         }
         catch (...)
         {
             cout << "Erro lendo Cinema ID " << id << endl;
         }
-        in.close();
-        out.close();
-        remove("cinema.csv");
-        rename("cinemas_new.csv", "cinema.csv");
-        return false;
     }
+    in.close();
+    out.close();
+    remove("cinemas.csv");
+    rename("cinemas_new.csv", "cinemas.csv");
+    return found;
 }
-    const std::vector<Cinema> getCinemas() {
+const std::vector<Cinema> getCinemas() {
         //
     }
