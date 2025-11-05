@@ -31,7 +31,10 @@ int main() {
         std::cout << "Escolha: ";
         std::cin >> tipoLogin;
 
-        if (tipoLogin == 0) break;
+        if (tipoLogin == 0) {
+            std::cout << "Encerrando o sistema...\n";
+            break;
+        }
 
         std::cout << "Usuário: ";
         std::cin >> usuario;
@@ -49,6 +52,7 @@ int main() {
         if (funcionario) {
             funcionario->executarTarefa();
             funcionario.reset();
+
         } else {
             std::cout << "Usuário ou senha incorretos!\n";
             std::cin.ignore();

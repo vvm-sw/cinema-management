@@ -22,14 +22,14 @@ public:
     Sala();
     ~Sala();
 
-    // ✅ Getters corrigidos com const no final
+    //Getters corrigidos com const no final
     int getId() const;
     TipoSala getTipoSala() const;
     std::string getNome() const;
     int getCapacidade() const;
     std::vector<std::vector<bool>> getAssentos() const;
 
-    // ✅ Setters
+    // Setters
     void setId(int id);
     void setTipoSala(TipoSala tipo);
     void setNome(const std::string& nome);

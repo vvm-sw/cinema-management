@@ -10,12 +10,23 @@ public:
     // Construtor
     Administrador(int id, const std::string& nome, double salario, const std::string& usuario = "", const std::string& senha = "");
 
-    // Metodo obrigatorio da classe base, ainda irei ajustar
+    // Metodo obrigatorio da classe base
     void executarTarefa() const override;
 
-    // Metódos que o adm será responsável, ainda irei "integrar" com as classes reais
+    // Metódos que o adm será responsável
+    // Crud de filmes
     void cadastrarFilme();
+    void listarFilmes();
+    void atualizarFilme();
+    void removerFilme();
+
+    // Crud de salas
     void cadastrarSala();
+    void listarSalas();
+    void atualizarSala();
+    void removerSala();
+
+    //Crud de sessões
     void cadastrarSessao();
 };
 #endif //CINEMA_MANAGEMENT_ADMINISTRADOR_H

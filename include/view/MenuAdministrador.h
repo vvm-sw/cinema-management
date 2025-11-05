@@ -3,6 +3,8 @@
 
 #include "../Administrador.h"
 
-void menuAdministrador(Administrador& administrador);
+void menuAdministrador();
+void menuGerenciarFilmes();
+void menuGerenciarSalas();
 
 #endif // CINEMA_MANAGEMENT_MENUADMINISTRADOR_H
