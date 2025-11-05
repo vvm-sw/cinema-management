@@ -44,22 +44,25 @@ O sistema é composto pelas seguintes classes:
 
 ## 📷 Galeria de fotos do Projeto
 
-![Imagem do WhatsApp de 2025-11-04 à(s) 16 37 00_52ff63b4](https://github.com/user-attachments/assets/92e83ce3-2766-4cb1-87d5-27040e13b123)
+![10](https://github.com/user-attachments/assets/6e518583-e248-48bb-9707-9830a4c47d61)
 
-Legenda: Tela inicial do programa
+Legenda: Tela inicial do programa.
 
-![11](https://github.com/user-attachments/assets/c3d47e9d-7f8e-4a40-8c78-f0446d679613)
-![12](https://github.com/user-attachments/assets/5fe6cc77-f8f0-4e07-b7bc-cb8c6ea752c3)
+![15](https://github.com/user-attachments/assets/67d3fc1e-5251-4226-8f4b-94bfe4f06eff)
 
-Legenda: Menu do administrador após fazer login
+Legenda: Menu do administrador após fazer login.
 
-![4](https://github.com/user-attachments/assets/dd6d1b69-cd79-4553-89c0-807b892a46cd)
+![12](https://github.com/user-attachments/assets/6eb3a8eb-7e59-46c4-abed-5fd925b3e4e7)
 
-Legenda: Cadastro de filme
+Legenda: Menu do atendente após fazer login.
 
-![3](https://github.com/user-attachments/assets/bace9c08-f4d5-42d6-b4fd-1806a8e6d90c)
+![14](https://github.com/user-attachments/assets/308f03f3-80f7-462b-91ed-48caef00271b)
 
-Legenda: Menu do atendente após fazer login
+Legenda: Cadastrando um filme.
+
+![16](https://github.com/user-attachments/assets/04700a79-ceec-4df3-a70a-6137d9926d56)
+
+Legenda: Parte de gerenciamento do CRUD de filmes.
 
 ---
 
