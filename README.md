@@ -66,6 +66,19 @@ Legenda: Parte de gerenciamento do CRUD de filmes.
 
 ---
 
+## Informações para execução no terminal
+
+Deixamos um Administrador e um Atendente já cadastrado nos repositórios para facilitar o login no sistema.
+Abaixo seguem o usuário e a senha:
+- Administrador:
+  - Usuário: admin
+  - senha: 1234
+- Atendente:
+  - Usuário: joao
+  - senha: abcd
+
+----
+
 ## 📎 Links Úteis
 
 - 📒 Relatório do projeto (Documentação): [Acessar](https://docs.google.com/document/d/11xFoJa0GqD1NjKzfLemEL894lhmg19mwjZ_aK_2ZWMk/edit?usp=sharing)
