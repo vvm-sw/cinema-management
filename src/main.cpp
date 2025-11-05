@@ -15,11 +15,10 @@ int main() {
 
     RepositorioAdministrador repoAdm("../data/administradores.csv");
     RepositorioAtendente repoAt("../data/atendentes.csv");
-    //RepositorioFilmes repoFilmes("../data/filmes.csv");
 
     int tipoLogin = -1;
     std::string usuario, senha;
-    std::unique_ptr<Funcionario> funcionario; // ponteiro polimórfico
+    std::unique_ptr<Funcionario> funcionario; //
 
     while (true) {
         system("cls");
@@ -48,7 +47,7 @@ int main() {
         }
 
         if (funcionario) {
-            funcionario->executarTarefa(); // 🔥 Polimorfismo em ação
+            funcionario->executarTarefa();
             funcionario.reset();
         } else {
             std::cout << "Usuário ou senha incorretos!\n";
@@ -57,6 +56,6 @@ int main() {
         }
     }
 
-    std::cout << "👋 Encerrando o sistema...\n";
+    std::cout << "Encerrando o sistema...\n";
     return 0;
 }
