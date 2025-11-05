@@ -72,6 +72,6 @@ Sessao Sessao::fromCSVLine(const std::string& line,
 void Sessao::exibir() const {
     std::cout << "Sessão ID: " << id << "\n"
               << "Filme: " << filme.getTitulo() << "\n"
-              << "Sala: " << sala.getNumero() << "\n"
+              << "Sala: " << sala.getNome() << "\n"
               << "Horário: " << horario << "\n";
 }

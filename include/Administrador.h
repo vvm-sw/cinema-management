@@ -28,5 +28,8 @@ public:
 
     //Crud de sessões
     void cadastrarSessao();
+    void listarSessoes();
+    void atualizarSessao();
+    void removerSessao();
 };
 #endif //CINEMA_MANAGEMENT_ADMINISTRADOR_H

@@ -14,11 +14,11 @@ add_executable(cinema_management
         src/Model/Funcionario.cpp
         src/Model/Administrador.cpp
         src/Model/Atendente.cpp
+        src/Model/Sessao.cpp
         src/Model/RepositorioAtendente.cpp
         src/Model/RepositorioAdministrador.cpp
         src/view/MenuAdministrador.cpp
         src/view/MenuAtendente.cpp
         src/Model/RepositorioSalas.cpp
-        include/RepositorioSalas.h
         src/Model/RepositorioSessoes.cpp
 )

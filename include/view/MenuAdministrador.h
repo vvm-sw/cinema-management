@@ -6,5 +6,6 @@
 void menuAdministrador();
 void menuGerenciarFilmes();
 void menuGerenciarSalas();
+void menuGerenciarSessoes();
 
 #endif // CINEMA_MANAGEMENT_MENUADMINISTRADOR_H

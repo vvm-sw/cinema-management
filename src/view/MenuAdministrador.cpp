@@ -29,3 +29,14 @@ void menuGerenciarSalas() {
     std::cout << "0 - Voltar\n";
     std::cout << "Escolha: ";
 }
+
+void menuGerenciarSessoes() {
+    std::cout << "===== GERENCIAR SESSÕES =====\n";
+    std::cout << "1 - Listar todas as sessões\n";
+    std::cout << "2 - Cadastrar nova sessão\n";
+    std::cout << "3 - Atualizar sessão existente\n";
+    std::cout << "4 - Remover sessão\n";
+    std::cout << "0 - Voltar\n";
+    std::cout << "Escolha: ";
+}
+
