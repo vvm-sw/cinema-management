@@ -85,6 +85,6 @@ Abaixo seguem o usuário e a senha:
 
 - 📒 Página github.io: [Acessar](https://andrews-anaxceu.github.io/cinema-management/)
 
-- 📽 Video Gravação da Equipe (Documentação): [Acessar](https://youtube.com)
+- 📽 Video Gravação da Equipe (Documentação): [Acessar](https://www.youtube.com/watch?v=MP1OsMoi-lA)
 
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=66CDAA&height=120&section=header"/>
