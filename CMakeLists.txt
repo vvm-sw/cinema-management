@@ -14,6 +14,7 @@ add_executable(cinema_management
         src/Model/Funcionario.cpp
         src/Model/Administrador.cpp
         src/Model/Atendente.cpp
+        src/Repository/CinemaRepositorio.cpp
         src/Model/Sessao.cpp
         src/Model/RepositorioAtendente.cpp
         src/Model/RepositorioAdministrador.cpp
@@ -22,3 +23,4 @@ add_executable(cinema_management
         src/Model/RepositorioSalas.cpp
         src/Model/RepositorioSessoes.cpp
 )
+

@@ -48,7 +48,6 @@ int main() {
             auto* at = repoAt.autenticar(usuario, senha);
             if (at) funcionario.reset(at);
         }
-
         if (funcionario) {
             funcionario->executarTarefa();
             funcionario.reset();
