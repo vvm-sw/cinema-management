@@ -1,18 +1,18 @@
-#include "../../include/CinemaRepositorio.h"
+#include "../../include/RepositorioCinema.h"
 #include <fstream>
 
 #include "../CsvUtils.h"
 using namespace std;
 
-CinemaRepositorio::CinemaRepositorio(const string &filepath) : filepath(filepath) {}
-CinemaRepositorio::~CinemaRepositorio() {}
+RepositorioCinema::RepositorioCinema(const string &filepath) : filepath(filepath) {}
+RepositorioCinema::~RepositorioCinema() {}
 
-const std::string CinemaRepositorio::getFilepath()
+const std::string RepositorioCinema::getFilepath()
 {
     return this->filepath;
 }
 
-const Cinema CinemaRepositorio::criarCinema(Cinema &cinema)
+const Cinema RepositorioCinema::criarCinema(Cinema &cinema)
 {
     string filepath = getFilepath();
     std::ofstream out(filepath, std::ios_base::app);
@@ -28,7 +28,7 @@ const Cinema CinemaRepositorio::criarCinema(Cinema &cinema)
     out << cinema.toCsv() << "\n";
     return cinema;
 }
-const Cinema CinemaRepositorio::getCinema(int id)
+const Cinema RepositorioCinema::getCinema(int id)
 {
     string filepath = getFilepath();
     std::ifstream in(filepath);
@@ -62,7 +62,7 @@ const Cinema CinemaRepositorio::getCinema(int id)
         return Cinema();
     }
 }
-const Cinema CinemaRepositorio::atualizarCinema(Cinema &cinema)
+const Cinema RepositorioCinema::atualizarCinema(Cinema &cinema)
 {
     if (deletarCinema(cinema.getId()))
     {
@@ -71,7 +71,7 @@ const Cinema CinemaRepositorio::atualizarCinema(Cinema &cinema)
     cout << "Cinema " + to_string(cinema.getId()) + " não encontrado." << endl;
     return Cinema();
 }
-const bool CinemaRepositorio::deletarCinema(int id)
+const bool RepositorioCinema::deletarCinema(int id)
 {
     string filepath = getFilepath();
     std::ofstream out("cinemas_new.csv", std::ios_base::app);
@@ -111,7 +111,7 @@ const bool CinemaRepositorio::deletarCinema(int id)
     rename("cinemas_new.csv", "cinemas.csv");
     return found;
 }
-const std::vector<Cinema> CinemaRepositorio::getCinemas()
+const std::vector<Cinema> RepositorioCinema::getCinemas()
 {
     ifstream in = ifstream(getFilepath());
     vector<Cinema> result;

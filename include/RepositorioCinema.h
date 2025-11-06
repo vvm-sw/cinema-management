@@ -1,11 +1,11 @@
-#ifndef _CINEMA_REPOSITORIO_H
-#define _CINEMA_REPOSITORIO_H
+#ifndef _REPOSITORIO_CINEMA__H
+#define _REPOSITORIO_CINEMA_H
 #include "Cinema.h"
 #include <vector>
-class CinemaRepositorio {
+class RepositorioCinema {
 public:
-    CinemaRepositorio(const std::string& filepath);
-    ~CinemaRepositorio();
+    RepositorioCinema(const std::string& filepath);
+    ~RepositorioCinema();
     const std::string getFilepath();
     const int getNextId();
     const Cinema criarCinema(Cinema& cinema);
