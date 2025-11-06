@@ -22,7 +22,8 @@ const Cinema CinemaRepositorio::criarCinema(Cinema &cinema)
         return Cinema();
         // return;
     }
-    if (cinema.getId() == -1) cinema.setId(CsvUtils::getNextId("id_counter.txt"));
+    if (cinema.getId() == -1)
+        cinema.setId(CsvUtils::getNextId("id_counter.txt"));
 
     out << cinema.toCsv() << "\n";
     return cinema;
@@ -63,11 +64,12 @@ const Cinema CinemaRepositorio::getCinema(int id)
 }
 const Cinema CinemaRepositorio::atualizarCinema(Cinema &cinema)
 {
-    if(deletarCinema(cinema.getId())) {
+    if (deletarCinema(cinema.getId()))
+    {
         return criarCinema(cinema);
     }
     cout << "Cinema " + to_string(cinema.getId()) + " não encontrado." << endl;
-    return Cinema ();
+    return Cinema();
 }
 const bool CinemaRepositorio::deletarCinema(int id)
 {
@@ -109,6 +111,16 @@ const bool CinemaRepositorio::deletarCinema(int id)
     rename("cinemas_new.csv", "cinemas.csv");
     return found;
 }
-const std::vector<Cinema> getCinemas() {
-        //
+const std::vector<Cinema> CinemaRepositorio::getCinemas()
+{
+    ifstream in = ifstream(getFilepath());
+    vector<Cinema> result;
+    std::string linha;
+    while (std::getline(in, linha))
+    {
+        if (linha.empty()) continue;
+        Cinema c = c.csvToCinema(linha);
+        result.push_back(c);
     }
+    return result;
+}
